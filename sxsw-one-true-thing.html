@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One True Thing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    background: transparent;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 420px;
+    background: #0a0a0a;
+    border-radius: 32px;
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  }
+
+  .logo {
+    width: 48px;
+    height: auto;
+    margin-bottom: 32px;
+    opacity: 0.95;
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 3px;
+    background: #c96842;
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+
+  .prompt {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+
+  .prompt-note {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    margin-top: 20px;
+    font-style: italic;
+    letter-spacing: 0.3px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <svg class="logo" viewBox="0 0 398.067 390.922" xmlns="http://www.w3.org/2000/svg">
+      <path d="m206.34 116.412h-170.008l29.529 51.155 22.822-39.158h31.134c-46.036 78.992-43.296 75.724-47.481 78.13-5.995 3.444-13.655 1.379-17.098-4.615l-53.354-92.425c-5.051-8.095.556-19.092 10.843-19.092 220.877 0 216.439-.903 220.866 1.626 5.86 3.362 7.874 10.852 4.506 16.712l-102.119 176.878 38.471 67.077 190.108-329.291h-183.958l-32.044 55h-28.104l41.92-71.945c5.096-8.779-.157-6.069 223.401-6.069 10.086 0 15.732 11.397 10.003 19.422l-210.711 364.959c-3.355 5.87-10.841 7.882-16.7 4.516-4.138-2.363-1.564.903-57.092-96.108-4.978-8.697-5.291-2.943 95.066-176.771z" fill="#c96842" fill-rule="evenodd"/>
+    </svg>
+
+    <div class="title">One True Thing</div>
+
+    <div class="divider"></div>
+
+    <div class="prompt">Say one true thing about where you are right now.</div>
+
+    <div class="prompt-note">It doesn't have to be about Vonked.<br>It just has to be true.</div>
+  </div>
+</body>
+</html>
