@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vonked - Arrival Mental Status Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: transparent; overflow: hidden; user-select: none; }
+    .container { position: fixed; top: 24px; left: 24px; }
+    .card { background: #000000; border-radius: 28px; padding: 60px 72px; display: inline-flex; flex-direction: column; align-items: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); max-width: 780px; }
+
+    .logo { width: 72px; height: 72px; margin-bottom: 24px; }
+    .eyebrow { font-size: 22px; font-weight: 700; color: #b8633f; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
+    .title { font-size: 52px; font-weight: 800; color: #ffffff; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; text-align: center; margin-bottom: 24px; }
+    .divider { width: 100px; height: 4px; background: #b8633f; margin-bottom: 28px; }
+    .subtitle { font-size: 36px; font-weight: 700; color: #ffffff; text-align: center; margin-bottom: 32px; }
+
+    .instructions { text-align: left; width: 100%; }
+    .instruction-item { display: flex; align-items: baseline; margin-bottom: 28px; }
+    .instruction-number { font-size: 24px; font-weight: 700; color: #b8633f; margin-right: 16px; min-width: 32px; }
+    .instruction-text { font-size: 24px; font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .instruction-text strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .instruction-text em { color: rgba(255,255,255,0.45); font-weight: 400; }
+
+    /* Stress scale gauge */
+    .scale-box { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px 32px 20px; margin-top: 32px; text-align: center; width: 100%; }
+    .scale-label { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+    .gauge-wrap { display: flex; justify-content: center; }
+    .gauge-wrap svg { width: 480px; height: 165px; }
+
+    .example-box { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px 36px; margin-top: 28px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .example-label { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+    .example-text { font-size: 24px; font-weight: 600; color: #cd9178; font-style: italic; text-align: center; }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <svg class="logo" viewBox="0 0 136.8102 134.6695" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70.6985,40.0101c-19.4478,0-40.2323,.0019-58.0377,.0019l9.8429,17.0509,7.6072-13.0528h10.8717l-14.6672,25.1669c-.369,.6267-.9017,1.1739-1.5764,1.5618-2.0508,1.1782-4.6716,.4717-5.8494-1.5787L.6375,37.5406c-.5532-.8866-.7807-1.9942-.5454-3.1538,.4064-2.0026,2.2732-3.3767,4.3166-3.3767,24.6433,0,49.4041-.0022,73.6195-.0022,.7119,.0022,1.436,.1808,2.0986,.5592,2.0117,1.154,2.7029,3.7254,1.5468,5.737l-35.056,60.7195,13.2063,23.0265L125.0851,8.0101H61.9634l-11.0699,19h-9.6895L55.7146,2.1059C56.494,.7632,57.9007,.0101,59.3487,.0101l73.2234-.0101c2.3418,0,4.2381,1.8979,4.2381,4.2381,0,.9213-.2932,1.7701-.7887,2.4641L63.3624,132.5501c-1.157,2.0241-3.7382,2.7181-5.7586,1.5574-.6732-.3843-1.2017-.9336-1.561-1.5616l-18.1258-31.5791c-.8345-1.462-.7019-3.2178,.1985-4.5191l32.583-56.4375Z" fill="#b8633f" fill-rule="evenodd"/>
+      </svg>
+
+      <div class="eyebrow">Arrival</div>
+      <div class="title">MENTAL<br>STATUS CHECK</div>
+
+      <div class="divider"></div>
+
+      <div class="subtitle">Type in Chat</div>
+
+      <div class="instructions">
+        <div class="instruction-item">
+          <span class="instruction-number">1.</span>
+          <div>
+            <div class="instruction-text">Stress level this <strong>WEEK</strong> <em>(range)</em></div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-number">2.</span>
+          <div>
+            <div class="instruction-text">Stress level <strong>TODAY</strong> <em>(single number)</em></div>
+          </div>
+        </div>
+
+        <div class="instruction-item">
+          <span class="instruction-number">3.</span>
+          <div>
+            <div class="instruction-text">1 – 3 words for how you're <strong>FEELING</strong></div>
+          </div>
+        </div>
+
+        <div class="scale-box">
+          <div class="scale-label">Stress Scale</div>
+          <div class="gauge-wrap">
+            <svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#22c55e"/>
+                  <stop offset="30%" stop-color="#84cc16"/>
+                  <stop offset="50%" stop-color="#eab308"/>
+                  <stop offset="70%" stop-color="#f97316"/>
+                  <stop offset="100%" stop-color="#ef4444"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Arc -->
+              <path d="M55,100 A185,90 0 0,1 405,100" stroke="rgba(255,255,255,0.08)" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <path d="M55,100 A185,90 0 0,1 405,100" stroke="url(#gaugeGrad)" stroke-width="18" fill="none" stroke-linecap="round"/>
+
+              <!-- 0 - left aligned with arc start -->
+              <text x="30" y="132" fill="rgba(255,255,255,0.55)" font-size="22" font-family="Inter, sans-serif" font-weight="700" text-anchor="start">0</text>
+              <text x="30" y="153" fill="rgba(255,255,255,0.4)" font-size="18" font-family="Inter, sans-serif" font-weight="500" text-anchor="start">no stress</text>
+
+              <!-- 10 - right aligned with arc end -->
+              <text x="430" y="132" fill="rgba(255,255,255,0.55)" font-size="22" font-family="Inter, sans-serif" font-weight="700" text-anchor="end">10</text>
+              <text x="430" y="153" fill="rgba(255,255,255,0.4)" font-size="18" font-family="Inter, sans-serif" font-weight="500" text-anchor="end">max stress</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">Example</div>
+        <div class="example-text">"3–9, 5, anxious, curious, sleepy"</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
