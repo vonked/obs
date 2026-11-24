@@ -17,7 +17,7 @@
     .eyebrow { font-size: 30px; font-weight: 700; color: #b8633f; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
     .title { font-size: 68px; font-weight: 800; color: #ece6de; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; text-align: center; margin-bottom: 32px; white-space: nowrap; }
     .divider { width: 120px; height: 5px; background: #b8633f; margin-bottom: 44px; }
-    .subtitle { font-size: 50px; font-weight: 700; color: #ece6de; text-align: center; margin-bottom: 44px; }
+    .subtitle { font-size: 38px; font-weight: 800; color: #000000; background: #b8633f; border-radius: 999px; padding: 14px 44px; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin-bottom: 48px; }
 
     .instructions { text-align: left; width: 100%; }
     .instruction-item { display: flex; align-items: baseline; margin-bottom: 36px; }
@@ -30,7 +30,7 @@
     .scale-box { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 36px 40px 26px; margin-top: 44px; text-align: center; width: 100%; }
     .scale-label { font-size: 24px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
     .gauge-wrap { display: flex; justify-content: center; }
-    .gauge-wrap svg { width: 640px; height: 223px; }
+    .gauge-wrap svg { width: 100%; height: auto; }
 
     .example-box { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 36px 40px; margin-top: 40px; width: 100%; display: flex; flex-direction: column; align-items: center; }
     .example-label { font-size: 24px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 18px; }
@@ -77,7 +77,7 @@
         <div class="scale-box">
           <div class="scale-label">Stress Scale</div>
           <div class="gauge-wrap">
-            <svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stop-color="#22c55e"/>
@@ -89,16 +89,16 @@
               </defs>
 
               <!-- Arc -->
-              <path d="M55,100 A185,90 0 0,1 405,100" stroke="rgba(255,255,255,0.08)" stroke-width="18" fill="none" stroke-linecap="round"/>
-              <path d="M55,100 A185,90 0 0,1 405,100" stroke="url(#gaugeGrad)" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <path d="M105,100 A185,90 0 0,1 455,100" stroke="rgba(255,255,255,0.08)" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <path d="M105,100 A185,90 0 0,1 455,100" stroke="url(#gaugeGrad)" stroke-width="18" fill="none" stroke-linecap="round"/>
 
               <!-- 0 - left aligned with arc start -->
-              <text x="30" y="132" fill="rgba(255,255,255,0.85)" font-size="26" font-family="Inter, sans-serif" font-weight="700" text-anchor="start">0</text>
-              <text x="30" y="153" fill="rgba(255,255,255,0.65)" font-size="22" font-family="Inter, sans-serif" font-weight="500" text-anchor="start">no stress</text>
+              <text x="14" y="112" fill="rgba(255,255,255,0.85)" font-size="26" font-family="Inter, sans-serif" font-weight="700" text-anchor="start">0</text>
+              <text x="14" y="136" fill="rgba(255,255,255,0.65)" font-size="22" font-family="Inter, sans-serif" font-weight="500" text-anchor="start">no stress</text>
 
               <!-- 10 - right aligned with arc end -->
-              <text x="430" y="132" fill="rgba(255,255,255,0.85)" font-size="26" font-family="Inter, sans-serif" font-weight="700" text-anchor="end">10</text>
-              <text x="430" y="153" fill="rgba(255,255,255,0.65)" font-size="22" font-family="Inter, sans-serif" font-weight="500" text-anchor="end">max stress</text>
+              <text x="546" y="112" fill="rgba(255,255,255,0.85)" font-size="26" font-family="Inter, sans-serif" font-weight="700" text-anchor="end">10</text>
+              <text x="546" y="136" fill="rgba(255,255,255,0.65)" font-size="22" font-family="Inter, sans-serif" font-weight="500" text-anchor="end">max stress</text>
             </svg>
           </div>
         </div>
