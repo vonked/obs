@@ -11,18 +11,22 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: transparent; overflow: hidden; user-select: none; }
     .container { position: fixed; top: 24px; left: 24px; }
-    .card { background: #000000; border-radius: 28px; padding: 52px 64px; display: inline-flex; flex-direction: column; align-items: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); max-width: 900px; }
+    .card { background: #000000; border-radius: 32px; padding: 56px 72px; display: inline-flex; flex-direction: column; align-items: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); min-width: 680px; }
 
     .logo { width: 84px; height: 84px; margin-bottom: 20px; }
-    .eyebrow { font-size: 30px; font-weight: 700; color: #b8633f; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
-    .title { font-size: 68px; font-weight: 800; color: #ffffff; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; text-align: center; margin-bottom: 24px; }
-    .divider { width: 100px; height: 4px; background: #b8633f; margin-bottom: 30px; }
+    .eyebrow { font-size: 30px; font-weight: 700; color: #b8633f; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+    .title { font-size: 68px; font-weight: 800; color: #ece6de; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; text-align: center; margin-bottom: 24px; }
+    .divider { width: 120px; height: 5px; background: #b8633f; margin-bottom: 44px; }
 
     .agenda { text-align: left; width: 100%; }
-    .agenda-item { display: flex; align-items: baseline; margin-bottom: 22px; }
+    .agenda-item { display: flex; align-items: center; margin-bottom: 34px; }
     .agenda-item:last-child { margin-bottom: 0; }
-    .agenda-dot { width: 13px; height: 13px; min-width: 13px; border-radius: 50%; background: #b8633f; margin-right: 24px; position: relative; top: -2px; align-self: center; }
-    .agenda-text { font-size: 38px; font-weight: 600; color: rgba(255,255,255,0.95); line-height: 1.4; }
+    .agenda-num { font-size: 40px; font-weight: 800; color: #c9744d; min-width: 56px; }
+    .agenda-text { font-size: 46px; font-weight: 600; color: #e4ddd4; line-height: 1.25; }
+
+    /* Optional: add ?step=3 to the URL to highlight item 3 and dim the rest */
+    .agenda-item.dim .agenda-num { color: #5a3a2b; }
+    .agenda-item.dim .agenda-text { color: #6f6a64; }
   </style>
 </head>
 <body>
@@ -39,42 +43,40 @@
 
       <div class="agenda">
         <div class="agenda-item">
-          <div class="agenda-dot"></div>
-          <div class="agenda-text">Arrive + settle</div>
+          <div class="agenda-num">1</div>
+          <div class="agenda-text">Why we're here</div>
         </div>
 
         <div class="agenda-item">
-          <div class="agenda-dot"></div>
-          <div class="agenda-text">Why we're here (+ rules)</div>
-        </div>
-
-        <div class="agenda-item">
-          <div class="agenda-dot"></div>
+          <div class="agenda-num">2</div>
           <div class="agenda-text">Warm-up</div>
         </div>
 
         <div class="agenda-item">
-          <div class="agenda-dot"></div>
+          <div class="agenda-num">3</div>
           <div class="agenda-text">Three exaggerations</div>
         </div>
 
         <div class="agenda-item">
-          <div class="agenda-dot"></div>
+          <div class="agenda-num">4</div>
           <div class="agenda-text">The real thing</div>
         </div>
 
         <div class="agenda-item">
-          <div class="agenda-dot"></div>
+          <div class="agenda-num">5</div>
           <div class="agenda-text">What just happened</div>
-        </div>
-
-        <div class="agenda-item">
-          <div class="agenda-dot"></div>
-          <div class="agenda-text">See you next month!</div>
         </div>
       </div>
 
     </div>
   </div>
+  <script>
+    var step = parseInt(new URLSearchParams(location.search).get('step'), 10);
+    if (step) {
+      document.querySelectorAll('.agenda-item').forEach(function (el, i) {
+        if (i + 1 !== step) el.classList.add('dim');
+      });
+    }
+  </script>
 </body>
 </html>
